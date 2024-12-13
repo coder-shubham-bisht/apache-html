@@ -1,11 +1,8 @@
-# Use official Apache HTTPD image as the base
+# Use the official Apache HTTP Server image as a base
 FROM httpd:2.4
 
-# Copy the custom index.html into the Apache web server's default directory
+# Copy the index.html into the appropriate directory for Apache to serve
 COPY index.html /usr/local/apache2/htdocs/
 
-# Expose the default HTTP port 80
+# Expose port 80 for the Apache server
 EXPOSE 80
-
-# The container will run Apache HTTP server by default
-CMD ["httpd-foreground"]
